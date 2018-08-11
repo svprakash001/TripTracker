@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:http="http://schemas.android.com/tools">
+
+<fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:layout="@layout/activity_display_map" />
+
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/map_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetEnd="0dp">
+
+        <include layout="@layout/toolbar_display_map"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    android:orientation="horizontal"
+    app:behavior_peekHeight="50dp"
+    app:behavior_hideable="false"
+    android:fitsSystemWindows="true">
+
+<Button android:id="@+id/btn_leave"
+    android:layout_height="50dp"
+    android:layout_width="50dp"
+    android:layout_weight="1"
+    android:background="@color/white"
+    android:text="Leave Trip"/>
+
+<Button android:id="@+id/btn_share"
+    android:layout_height="50dp"
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:background="@color/white"
+    android:text="Add Members"/>
+
+</LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+
