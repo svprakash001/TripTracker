@@ -2,7 +2,7 @@
 
 A realtime location sharing app for riders. https://play.google.com/store/apps/details?id=prakash.triptracker
 
-Usefull for bike or car journeys with friends. Never get lost in a trip anymore and know where your friends are.
+Usefull for bike and car journeys or trekking with friends. Never get lost in a trip anymore and know where your friends are.
 
 You can create a ride group by just entering the trip name . Others can join a ride group by using a unique tripcode.Everyone in the group can know the realtime location of all the other members.
 
@@ -16,10 +16,10 @@ You can create a ride group by just entering the trip name . Others can join a r
 
 ### Components
 
-* *FusedLocationProider* to get your current location periodically woth minimum drain on battery
+* *FusedLocationProider* to get your current location periodically with minimum drain on battery
 * *Google Maps Android SDK* to display and update the map
 * **Serverless** architecture with all the functions carried out in client side.(More on this below)
-* **No-SQL Document** database is used
+* **No-SQL Document** based database is used
 * *Firebase anonymous authentication* to uniquely identify each user
 
 ![alt text](https://user-images.githubusercontent.com/7611872/44030386-3f3db97c-9f1e-11e8-870f-40b28576cb27.jpg)
@@ -30,12 +30,12 @@ You can create a ride group by just entering the trip name . Others can join a r
 
 ### Serverless Architecture
 
-No application server and only Database server is used. Uses Cloud Firestore Realtime Database which is a **NoSQL Documnet Database**(work in progress to move to CouchBase Lite) 
+No application server and only Database server is used. Uses Cloud Firestore Realtime Database which is a **NoSQL Documnet Database**(will soon move to CouchBase Lite) 
 
-Trip creation is handled on client side and a new document is created in cloud DB for every trip created. When new user joins/leaves corresponding changes are made in the document. Location updates are sent to the DB perodically and immediately a callback is triggerd on all teh connected clients that a new update is available.
+Trip creation is handled on client side and a new document is created in cloud Database for every trip created. When new user joins/leaves corresponding changes are made in the document. Location updates are sent to the DB perodically and immediately a callback is triggerd on all the connected clients stating that a new update is available.
 
 #### Work in Progress
 
 1. Move the database layer to **Couchbase Lite with Sync Gateway**
-2. Ability to selectively choos members whose location we want to see in realtime. Currently all the ride members' location is shown
-3. Create an *admin* to remove users from the ride group
+2. Ability to selectively choose members whose location we want to see in realtime. Currently all the ride members' location is shown
+3. Create an *admin* functionality and role to perform operations such as removing an user from ride group
